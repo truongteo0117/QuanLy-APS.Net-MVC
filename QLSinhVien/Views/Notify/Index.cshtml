@@ -1,0 +1,15 @@
+﻿@model IEnumerable<QLSinhVien.Models.ThongBao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Thông Báo</h2>
+<hr />
+<br />
+@foreach (var item in Model)
+{
+    <div class="alert alert-info">
+        <strong>@item.CreateTime:</strong> @item.Messenger <p style="float: right">@Html.ActionLink("Delete", "RemoveNotify", new { id = item.Id })</p>
+    </div>
+}
